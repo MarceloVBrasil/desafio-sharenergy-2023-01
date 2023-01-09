@@ -10,7 +10,7 @@ export default class ClientController {
 
     static async getAll(req: Request, res: Response) {
         try {
-            const result = ClientService.getAll()
+            const result = await ClientService.getAll()
             res.json(result)
         } catch (error) {
             res.status(400).json({ message: error })
@@ -41,7 +41,7 @@ export default class ClientController {
     static async update(req: Request, res: Response) {
         try {
             await ClientSchema.update().validate(req.params)
-            const result = await ClientService.add(req.body)
+            const result = await ClientService.update(req.params.id, req.body)
             if (typeof result === 'string') res.status(400).json({ message: result })
             else res.json(result)
         } catch (error) {
