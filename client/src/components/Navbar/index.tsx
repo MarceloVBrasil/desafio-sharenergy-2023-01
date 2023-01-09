@@ -3,16 +3,16 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import logo from "../../assets/images/logo.png"
 import "./Navbar.scss"
 import { NavLink } from 'react-router-dom';
-import ModalMenu from '../ModalMenu';
 import { useState } from 'react';
 import { useUser } from '../../contextAPI/UserProvider';
+import NavBarMenu from '../NavBarMenu';
 
 export default function Navbar() {
     const [showModal, setShowModal] = useState<boolean>(false)
     const { loggedIn, logOut, rememberMe } = useUser()
     return (
         <div className='navbar'>
-            <ModalMenu show={showModal} setShowModal={setShowModal} />
+            <NavBarMenu show={showModal} setShowModal={setShowModal} />
             <NavLink to="/"><img src={logo} alt="logo" className='navbar__logo' /></NavLink>
             <div className='navbar-links'>
                 {loggedIn || rememberMe ? <NavLink to="/">

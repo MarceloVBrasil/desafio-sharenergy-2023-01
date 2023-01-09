@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavBarMenuType } from "../../types/navbarMenu";
 
-function Modal({ show, setShowModal }: NavBarMenuType) {
+function NavBarMenu({ show, setShowModal }: NavBarMenuType) {
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
     const tabletWidth = 768
 
@@ -47,4 +47,4 @@ function Modal({ show, setShowModal }: NavBarMenuType) {
     }
 }
 
-export default Modal;
+export default NavBarMenu;
