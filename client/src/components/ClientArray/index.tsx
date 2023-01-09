@@ -10,7 +10,7 @@ import { useUser } from "../../contextAPI/UserProvider"
 import CircularProgress from "@mui/material/CircularProgress"
 import NoClient from "../NoClient"
 
-export default function ClientList() {
+export default function ClientArray() {
     const [clients, setClients] = useState<ClientType[] | null>(null)
     const [response, setResponse] = useState<string>('')
     const [showModal, setShowModal] = useState<boolean>(false)
