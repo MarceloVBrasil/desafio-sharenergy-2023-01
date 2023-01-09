@@ -30,6 +30,7 @@ export default class ClientController {
     static async add(req: Request, res: Response) {
         try {
             await ClientSchema.add().validate(req.body)
+            req.body.id = uuidV4()
             const result = await ClientService.add(req.body)
             if (typeof result === 'string') res.status(400).json({ message: result })
             else res.json(result)
