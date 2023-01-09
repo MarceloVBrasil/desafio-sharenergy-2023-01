@@ -15,7 +15,7 @@ export default function ClientArray() {
     const [response, setResponse] = useState<string>('')
     const [showModal, setShowModal] = useState<boolean>(false)
     const { clientPageNumber, setClientPageNumber } = useUser()
-    const numberOfClientsPerPage = 2
+    const numberOfClientsPerPage = 3
 
     useEffect(() => {
         getAllClients()
