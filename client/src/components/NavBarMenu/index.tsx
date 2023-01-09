@@ -1,4 +1,4 @@
-import "./Modal.scss";
+import "./NavBarMenu.scss";
 import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";

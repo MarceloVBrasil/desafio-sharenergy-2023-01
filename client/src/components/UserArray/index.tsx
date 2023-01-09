@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./UserList.scss"
+import "./UserArray.scss"
 import { user } from "../../types/user"
 import { axiosInstanceUserGeneratorAPI } from "../../utils/axiosInstance"
 import ModalError from "../ModalError"
@@ -33,17 +33,17 @@ export default function UserArray() {
     }, [users, searchTerm])
 
     if (!users[0]) {
-        return <div className="users-page"><CircularProgress /></div>
+        return <div className="page"><CircularProgress /></div>
     }
     return (
-        <div className="user-list">
+        <div className="user-array">
             <Input label="search user" fontSize="1.2rem" type="text" onChange={handleSearchTerm} searchTerm={searchTerm} />
             <ModalError show={showModal} message={response} setShowModal={setShowModal} />
             {filteredUsers.map((user: user) => <User key={user.id} {...user} />)}
-            <nav className="user-list-nav">
-                <p className="user-list-nav__link" onClick={handlePrevPage}>Prev</p>
+            <nav className="user-array-nav">
+                <p className="user-array-nav__link" onClick={handlePrevPage}>Prev</p>
                 {userPageNumber}
-                <p className="user-list-nav__link" onClick={handleNextPage}>Next</p>
+                <p className="user-array-nav__link" onClick={handleNextPage}>Next</p>
             </nav>
         </div>
     )

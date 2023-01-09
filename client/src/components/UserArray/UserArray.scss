@@ -1,7 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.user-list {
+.user-array {
     display: flex;
     flex-direction: column;
     gap: 1rem;

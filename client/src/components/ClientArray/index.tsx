@@ -1,4 +1,4 @@
-import "./ClientList.scss"
+import "./ClientArray.scss"
 import Client from "../Client"
 import { Link } from "react-router-dom"
 import Button from "../../components/Button"
@@ -22,13 +22,13 @@ export default function ClientArray() {
     }, [clients])
 
     if (!clients) {
-        return <div className="clients-page"><CircularProgress /></div>
+        return <div className="page"><CircularProgress /></div>
     }
 
     if (clients.length === 0) {
         return (
-            <div className="client-list">
-                <Link to={"/clients/add"} className="client-list-button-container"><Button text="New Client" /></Link>
+            <div className="client-array">
+                <Link to={"/clients/add"} className="client-array-button-container"><Button text="New Client" /></Link>
                 <NoClient />
             </div>
         )
@@ -36,18 +36,18 @@ export default function ClientArray() {
     }
 
     return (
-        <div className="client-list">
+        <div className="client-array">
             <ModalError show={showModal} message={response} setShowModal={setShowModal} />
-            <Link to={"/clients/add"} className="client-list-button-container"><Button text="New Client" /></Link>
+            <Link to={"/clients/add"} className="client-array-button-container"><Button text="New Client" /></Link>
             {clients.map((client, index) => {
                 if (numberOfClientsPerPage * (clientPageNumber - 1) <= index && index < numberOfClientsPerPage * clientPageNumber) {
                     return <Client {...client} key={client.id} />
                 }
             })}
-            <nav className="client-list-nav">
-                <p className="client-list-nav__link" onClick={handlePrevPage}>Prev</p>
+            <nav className="client-array-nav">
+                <p className="client-array-nav__link" onClick={handlePrevPage}>Prev</p>
                 {clientPageNumber}
-                <p className="client-list-nav__link" onClick={handleNextPage}>Next</p>
+                <p className="client-array-nav__link" onClick={handleNextPage}>Next</p>
             </nav>
         </div>
     )
