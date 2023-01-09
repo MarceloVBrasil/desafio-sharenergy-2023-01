@@ -29,6 +29,7 @@ export default class ClientService {
         const cpfBelongsToSomeoneElse = await this.checkIfCpfBelongsToSomeoneElse(client.cpf, id)
         if (cpfBelongsToSomeoneElse) return 'cpf already taken'
         const emailBelongsToSomeoneElse = await this.checkIfEmailBelongsToSomeoneElse(client.email, id)
+        if (emailBelongsToSomeoneElse) return 'email already taken'
 
         return clientRepository.update(id, client)
     }
