@@ -1,0 +1,50 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.button {
+    width: 50%;
+    text-transform: capitalize;
+    border-radius: 50rem;
+    padding: 0.3rem 0;
+    background-color: $blue;
+    color: white;
+    border: none;
+
+    &:hover:not(.button--cancel):not([disabled]) {
+        background-color: $darkBlue;
+    }
+    
+    &:not([disabled]) {
+        cursor: pointer;
+    }
+
+    @include Desktop {
+        width: 11rem;
+        padding: 0.3rem 1.5rem;
+    }
+
+    &--cancel {
+        background-color: white;
+        color: $blue;
+        border: 1px solid grey;
+    }
+
+    &--delete {
+        background-color: $Orange;
+
+        &:hover:not([disabled]) {
+            background-color: $DarkOrange;
+        }
+    }
+
+    &__action {
+        background-color: $blue;
+        color: white;
+        border: none;
+
+        &:hover:not([disabled]) {
+            background-color: $darkBlue;
+        }
+    }
+}

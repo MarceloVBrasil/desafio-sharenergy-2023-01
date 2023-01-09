@@ -1,0 +1,88 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.no-client {
+    background-color: white;
+    display: flex;
+    min-width: 23rem;
+    max-height: 20rem;
+    color: $darkBlue;
+    border-radius: 0.25rem;
+    position: relative;
+    padding-bottom: 3.0rem;
+    margin-bottom: 2rem;
+    @include BoxShadow;
+
+    @include Tablet {
+        min-width: 35rem;
+    }
+
+    @include Desktop {
+        min-width: 40rem;
+    }
+
+
+    &-section {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        width: 50%;
+        gap: 1rem;
+
+        &:first-child {
+            margin: 0.5rem 0;
+            border-right: 1px solid $Cloud;
+        }
+
+        &:nth-child(2) {
+            margin: 0.5rem 0;
+        }
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5rem;
+            column-gap: 1.5rem;
+            width: auto;
+        }
+        
+        &__title {
+            font-size: 1.1rem;
+            text-transform: capitalize;
+        }
+
+        &__image {
+            max-width: 7rem;
+            margin-top: 1rem;
+        }
+
+        &__info {
+           white-space: pre-wrap;
+           line-height: 1.75rem;
+           font-size: 0.7rem;
+           color: black;
+
+           @include Tablet {
+            font-size: 1rem;
+           }
+        }
+    }
+
+    &-buttons {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: $Cloud;
+        padding: 0.5rem;
+        width: 100%;
+        column-gap: 0.5rem;
+
+        &-button-container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

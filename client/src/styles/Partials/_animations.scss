@@ -1,0 +1,31 @@
+@keyframes LoadingPet {
+    0% {
+        color: black;
+        scale: 1;
+    }
+
+    20% {
+        color: red;
+        scale: 1.5;
+    }
+
+    40% {
+        color: blue;
+        scale: 2;
+    }
+
+    60% {
+        color: green;
+        scale: 2;
+    }
+
+    80% {
+        color: blue;
+        scale: 1.5;
+    }
+
+    100% {
+        color: red;
+        scale: 1;
+    }
+}

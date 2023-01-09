@@ -1,0 +1,65 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.dogs {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-height: 17rem;
+    background-color: white;
+    position: relative;
+    border-radius: 0.25rem;
+    @include BoxShadow;
+
+    @include Tablet {
+        width: 70%;
+    }
+
+    @include Desktop {
+        width: 60%;
+    }
+
+    &__title {
+        position: relative;
+        top: 0.5rem;
+        left: 0.5rem;
+        font-size: 1.2rem;
+
+        @include Tablet {
+            font-size: 1.35rem;
+        }
+
+        @include Desktop {
+            font-size: 1.5rem;
+        }
+    }
+    
+    &__image {
+        margin: 1rem auto;
+        width: 12rem;
+        height: 8rem;
+
+        @include Width500 {
+            width: 15rem;
+            height: 10rem;
+        }
+    }
+
+    &__loading {
+        position: relative;
+        bottom: 3rem;
+        margin: auto;
+        @include LoadingPetAnimation;
+    }
+
+    &-buttons {
+       position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        background-color: $Cloud;
+        padding: 0.5rem;
+        width: 100%;
+        column-gap: 0.5rem;
+    }
+}

@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+
+.contact {
+    background-color: $blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.5rem;
+
+    &__icon {
+        font-size: 1.0rem !important;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.3s !important;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-group {
+        display: flex;
+        column-gap: 0.5rem;
+        font-size: 0.5rem !important;
+    }
+}

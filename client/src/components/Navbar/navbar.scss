@@ -1,0 +1,60 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid gray; 
+    position: sticky; 
+    top: 0; 
+    z-index: 2; 
+
+    &__logo {
+        width: 2.2rem;
+        cursor: pointer;
+    }
+
+    &-links {
+        display: flex;
+        column-gap: 1rem;
+
+        &__menu {
+            font-size: 2.0rem !important;
+            cursor: pointer;
+            
+            @include Tablet {
+                display: none !important;
+            }
+        }
+
+        &__link {
+            display: none;
+            @include Tablet {
+                display: flex;
+                font-size: 1rem;
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom 0.7s !important;
+                padding-bottom: 0.1rem;
+
+                &.active, &:hover {
+                    color: $blue;
+                    border-color: $blue;
+                }
+
+                &:hover {
+                    border-color: 2px solid $blue;
+                }
+
+                &--logout {
+                    cursor: pointer;
+                    display: block;
+                }
+            }
+        }
+    }
+}

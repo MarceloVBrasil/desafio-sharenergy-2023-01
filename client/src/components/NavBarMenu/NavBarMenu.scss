@@ -1,0 +1,66 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.overlay {
+
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.835);
+
+}
+.navbar-menu-container {
+    
+    z-index: 5341324;
+    position: fixed;
+    height: 100%;
+    background-color: #fff;    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 85%;
+    height: 75%;
+
+    @include Desktop {
+        width: 50%
+    }
+    
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 52;
+
+    &-header {
+        font-size: 1.5rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
+
+    &-body {
+        height: 85vh;
+        padding: 0 1rem;
+        width: 100%;
+        height: 8rem;
+        padding: 0 5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        &__text {
+            text-decoration: none !important;
+
+            &.active, &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
