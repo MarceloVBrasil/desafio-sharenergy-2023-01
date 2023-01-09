@@ -1,4 +1,6 @@
-export interface IClient {
+import mongoose, { Schema } from "mongoose"
+import { v4 as uuidV4 } from "uuid"
+interface IClient {
     cpf: string
     email: string
     address: address
@@ -15,3 +17,20 @@ type address = {
     "PI" | "RJ" | "RN" | "RS" | "RO" | "RR" | "SC" | "SE" | "SP" |
     "TO"
 }
+
+const ClientSchema = new Schema<IClient>({
+    _id: { type: String, default: uuidV4() },
+    cpf: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true },
+    fullName: { type: String, required: true },
+    phone: { type: String, required: true },
+    address: {
+        street: { type: String, required: true },
+        city: { type: String, required: true },
+        state: { type: String, required: true }
+    },
+})
+
+const Client = mongoose.model('client', ClientSchema)
+
+export { Client, IClient }
