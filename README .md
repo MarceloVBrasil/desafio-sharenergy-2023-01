@@ -65,5 +65,5 @@ Para rodar essa aplicação, é necessário as seguintes env variables:
 
 ## Appendix
 
-Video: 
+Video: https://www.youtube.com/watch?v=3c3qyewzz_4&ab_channel=MarceloBrasil-Developer
 
